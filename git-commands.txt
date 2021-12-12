@@ -1,0 +1,41 @@
+$ rm -rf $(find . | grep -v git)        remove all files and folders NOT containing "git"
+
+count@DESKTOP-9N5MIHJ MINGW64 ~/dev/git-learn
+$ mkdir -p Animals/{cat,dog,fish}/{food,drink,play}
+
+count@DESKTOP-9N5MIHJ MINGW64 ~/dev/git-learn
+$ tree Animals/
+Animals/
+|-- cat
+|   |-- drink
+|   |-- food
+|   `-- play
+|-- dog
+|   |-- drink
+|   |-- food
+|   `-- play
+`-- fish
+    |-- drink
+    |-- food
+    `-- play
+
+
+$ git init
+Initialized empty Git repository in C:/Users/count/dev/git-learn/.git/
+$ git config --global user.name "Eli Countrywood"
+$ git config --global user.email "countrywoodster@gmail.com"
+$ git config --global github.user elco5
+$ git config --global github.token Pokpok090!
+
+
+echo "# git-learn-hosted" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/elco5/git-learn-hosted.git
+git push -u origin main
+
+$ git remote -v     list all remotes
+$ git remote rename origin hub      rename remote destination "origin" to "hub"
+
